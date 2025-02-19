@@ -4,7 +4,7 @@ from sklearn.cluster import KMeans
 import numpy as np
 
 
-features = data_normalized[:, :-1]  # 去掉最后一列的 flag
+features = data_normalized[:, :-1]  
 
 
 features = features[~np.isnan(features).any(axis=1)]
