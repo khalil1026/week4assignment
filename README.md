@@ -1,27 +1,18 @@
-# week4assignment
+# Week 4 Assignment
 
-from sklearn.cluster import KMeans
-import numpy as np
+## Overview
+This project focuses on classifying echoes in leads and sea ice based on their shape and standard deviation.
 
+## Steps
+1. **Load Data**
+2. **Data Processing**
+   - Compute mean and standard deviation for leads and sea ice echoes.
+   - Generate a confusion matrix.
+3. **Visualization**
+   ![](figure1.png)  
+   *(Example of an echo classification result)*
 
-features = data_normalized[:, :-1]  
-
-
-features = features[~np.isnan(features).any(axis=1)]
-
-
-kmeans = KMeans(n_clusters=2, random_state=42)
-labels = kmeans.fit_predict(features)
-
-
-class_1_mean = features[labels == 0].mean(axis=0)
-class_1_std = features[labels == 0].std(axis=0)
-
-class_2_mean = features[labels == 1].mean(axis=0)
-class_2_std = features[labels == 1].std(axis=0)
-
-print("Class 1 Mean:", class_1_mean, "Std Dev:", class_1_std)
-print("Class 2 Mean:", class_2_mean, "Std Dev:", class_2_std)
-
-Class 1 Mean: [-0.30438413 -0.40355842] Std Dev: [0.78820352 0.3794673 ]
-Class 2 Mean: [1.29340343 1.69680428] Std Dev: [0.63829634 0.98187561]
+## Installation
+Run the following command to install dependencies:
+```bash
+pip install numpy pandas matplotlib scikit-learn
